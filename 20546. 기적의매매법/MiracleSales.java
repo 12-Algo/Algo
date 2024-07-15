@@ -32,31 +32,17 @@ public class MiracleSales {
 		// 성민
 		int stockS = 0;
 		int resultS = 0;
-		int yesterday = stock[0];
-		int cnt = 0;
-
-		for (int i = 1; i < 14; i++) {
-			int today = stock[i];
-
-			if (today < yesterday) {
-				cnt -= 1;
-			} else if (today > yesterday) {
-				cnt += 1;
-			} else {
-				cnt = 0;
-			}
-
-			if (cnt == 3) {
-				if (moneyS >= today) {
-					stockS += (moneyS / today);
-					moneyS %= today;
-					cnt = 0;
-				}
-			} else if (cnt == -3) {
-				if (stockS > 0) {
-					moneyS += stockS * today;
-					stockS = 0;
-					cnt = 0;
+		
+		for (int i = 3; i < 14; i++) {
+			//3일 연속 상승하면 판매
+			if((stock[i-3] < stock[i-2])&&(stock[i-2]<stock[i-1]) && (stock[i-1]<stock[i])) {
+				moneyS += (stockS*stock[i]);
+				stockS = 0;
+			}//3일 연속 하락하면 구매
+			else if ((stock[i-3] > stock[i-2])&&(stock[i-2]>stock[i-1]) && stock[i-1]>stock[i]) {
+				if(moneyS >= stock[i]) {
+					stockS += (moneyS/stock[i]);
+					moneyS %= stock[i];
 				}
 			}
 		}
@@ -68,5 +54,6 @@ public class MiracleSales {
 		} else {
 			System.out.println("SAMESAME");
 		}
+		System.out.println("%d   %d".formatted(resultS, resultJ));
 	}
 }
