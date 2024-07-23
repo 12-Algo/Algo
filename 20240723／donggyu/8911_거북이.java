@@ -8,7 +8,8 @@ import java.util.StringTokenizer;
 public class Turtle {
 		//dx dy?
 		//maxX, maxY, minX, minY 저장
-		//정사각형 넓이 = (maxX-minX)*(maxY-minY)		public static void main(String[] args) throws NumberFormatException, IOException {
+		//정사각형 넓이 = (maxX-minX)*(maxY-minY)		
+		public static void main(String[] args) throws NumberFormatException, IOException {
 			BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
 			int T = Integer.parseInt(bf.readLine());
 			
