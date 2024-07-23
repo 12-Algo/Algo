@@ -27,9 +27,7 @@
 
 ![image](https://github.com/user-attachments/assets/f52240d8-13dd-46e3-b496-c74c4c384ce4)
 
-- 가장 처음에 `git switch -c name` 명령으로 자신의 브랜치 생성
-
-- 최초 생성 이후에는 `git switch name` 명령으로 변경만 하면 됩니다!
+- `git switch -c name` 명령으로 자신의 브랜치 생성
 
 <br>
 
@@ -69,6 +67,10 @@
 
 PR 생성 완료~✨
 
+
+![image](https://github.com/user-attachments/assets/daac5a92-e50a-419b-bf52-1fcfa5e40805)
+
+PR merge한 후에 자신의 branch 삭제해주세요~!
 
 
 
