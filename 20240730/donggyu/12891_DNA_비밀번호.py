@@ -36,8 +36,7 @@ for i in range(p):
     plus(word[i])
 if minimal[0] <= check[0] and minimal[1] <= check[1] and minimal[2] <= check[2] and minimal[3] <= check[3]:
     ans += 1
-print(check)
-print(minimal)
+
 while(True):
     if end >= s-1:
         break
@@ -46,8 +45,6 @@ while(True):
     end += 1
     plus(word[end])
     
-    print(check)
-    print(minimal)
     if minimal[0] <= check[0] and minimal[1] <= check[1] and minimal[2] <= check[2] and minimal[3] <= check[3]:
         ans += 1
  

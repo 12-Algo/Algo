@@ -29,7 +29,7 @@ for _ in range(t):
     cnt += 1
 
 tallest = abs(heapq.heappop(giants))
-print(tallest)
+
 if(tallest<h):
     print("YES")
     print(cnt)
