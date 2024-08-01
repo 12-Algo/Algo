@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.StringTokenizer;
 
 public class Main {
+
+    // 집, 치킨집 전부 저장할 수 있는 클래스
     static class House {
         int x, y;
         public House(int x, int y) {
@@ -12,14 +14,19 @@ public class Main {
             this.y = y;
         }
     }
+    // 치킨집 저장
     static ArrayList<House> chickenList = new ArrayList<>();
+    // 일반 집 저장
     static ArrayList<House> houseList = new ArrayList<>();
+    // 살아남은 치킨집 저장
     static ArrayList<House> selectList = new ArrayList<>();
     static int n, m;
     static int[][] map = new int[51][51];
+    // 이미 선택된 index의 치킨집
     static boolean[] select = new boolean[14];
     static int answer = 99999999;
 
+    // 맨해튼 거리 계산 함수
     static int calc_dist() {
         int dist_sum = 0;
         for (int i = 0; i < houseList.size(); i++) {
@@ -36,6 +43,8 @@ public class Main {
         }
         return dist_sum;
     }
+
+    // M개만큼 치킨집 선택 후 거리 계산
     static void dfs(int idx) {
         if(selectList.size() == m) {
             answer = Math.min(answer, calc_dist());
