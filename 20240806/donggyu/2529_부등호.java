@@ -24,7 +24,7 @@ public class Inequality {
 			}
 			// Character.getNumericValue(num.charAt(idx - 1))(현재까지 경로중 마지막숫자)
 			// j , arr[idx-1] 다음 숫자와 부등호
-			if(idx == 0 || ckeck(Character.getNumericValue(num.charAt(idx - 1)), j , arr[idx-1])) {
+			if(idx == 0 || check(Character.getNumericValue(num.charAt(idx - 1)), j , arr[idx-1])) {
 				isVisited[j] = true;
 				//num에 문자열 붙임 [depth 1증가]
 				dfs(num+j, idx+1);
@@ -34,7 +34,7 @@ public class Inequality {
 		
 	}
 	
-	static boolean ckeck(int a, int b, String c) {
+	static boolean check(int a, int b, String c) {
 		// 현재 사용하는 숫자와 j번째 숫자와 비교하여, 부등호가 성립되면 true
 		if (c.equals(">")) {
 			return a>b;
