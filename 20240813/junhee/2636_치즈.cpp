@@ -12,11 +12,11 @@ int map[101][101] = { 0, };
 int dx[4] = { 0,1,0,-1 };
 int dy[4] = { 1,0,-1,0 };
 
-struct cheeze {
+struct cheese {
 	int x, y, depth;
 };
 
-int check_cheeze() {
+int check_cheese() {
 	int cnt = 0;
 	for (int i = 0; i < n; i++) {
 		for (int j = 0; j < m; j++) {
@@ -28,11 +28,11 @@ int check_cheeze() {
 }
 
 void bfs() {
-	queue<cheeze> q;
+	queue<cheese> q;
 	bool visit[101][101] = { false, };
 	q.push({ 0,0,0 });
 	while (!q.empty()) {
-		cheeze now = q.front();
+		cheese now = q.front();
 		q.pop();
 		for (int i = 0; i < 4; i++) {
 			int nx = now.x + dx[i];
@@ -66,8 +66,8 @@ int main() {
 	}
 	int prev = 0;
 	int answer = 0;
-	while (check_cheeze() != 0) {
-		prev = check_cheeze();
+	while (check_cheese() != 0) {
+		prev = check_cheese();
 		bfs();
 		answer++;
 	}
