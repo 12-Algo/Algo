@@ -5,8 +5,8 @@
 using namespace std;
 
 int n;
-int score_board[50][9];  // 문제에서 최대 n은 50이므로 이를 반영
-int order[9];  // 타순 배열
+int score_board[50][9];
+int order[9];
 bool visit[9];
 int answer = 0;
 
