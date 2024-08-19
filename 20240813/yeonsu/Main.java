@@ -31,10 +31,10 @@ public class Main {
         for (int dir=0;dir<4;dir++) {
             int ny = i + dy[dir];
             int nx = j + dx[dir];
-            if (ny >= 0 && ny < n && nx >= 0 && nx < m && map[i][j] > map[ny][nx] && !visit[ny][nx]) {
-                visit[ny][nx] = true;
+            if (ny >= 0 && ny < n && nx >= 0 && nx < m && map[i][j] > map[ny][nx]) {
+                // visit[ny][nx] = true;
                 dp[i][j] += dfs(ny, nx);
-                visit[ny][nx] =  false;
+                // visit[ny][nx] =  false;
             }
         }
         return dp[i][j];
