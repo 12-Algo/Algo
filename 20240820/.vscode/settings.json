@@ -1,8 +1,0 @@
-{
-  "files.associations": {
-    "*html": "html",
-    "*.css": "tailwindcss",
-    "iostream": "cpp",
-    "queue": "cpp"
-  }
-}
