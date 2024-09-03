@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
@@ -34,6 +33,7 @@ public class BOJ2056 {
 			for(int j=0;j<g.size();j++) {
 				int to = g.get(j);
 				edges[to]--;
+//				A작업이 끝나는 시간 = 선행 작업들이 끝나는시간+A작업에 걸리는 시간들 중 최대값 
 				finishTime[to] = Math.max(finishTime[to], times[to]+finishTime[now]);
 				if(edges[to]==0) q.add(to);
 			}
@@ -57,10 +57,12 @@ public class BOJ2056 {
 		
 		N = Integer.parseInt(bf.readLine());
 		edges = new int[N];
+//		각 작업별 작업에 걸리는 시간
 		times = new int[N];
 		for(int i=0;i<N;i++) {
 			graph.add(new ArrayList<>());
 		}
+//		각 작업별 종료 시간
 		finishTime = new int[N];
 		
 		setInput();

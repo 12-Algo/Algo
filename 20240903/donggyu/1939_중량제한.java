@@ -17,6 +17,8 @@ public class BOJ1939 {
 		while(!q.isEmpty()) {
 			Bridge cur = q.poll();
 			union(cur.a, cur.b);
+//			다리가 견딜 수 있는 중량의 최댓값 순으로 정렬했기 때문에
+//			처음 두 섬이 연결된 경우가 최대
 			if(findParent(factory1)==findParent(factory2)) {
 				ans = cur.w;
 				break;
