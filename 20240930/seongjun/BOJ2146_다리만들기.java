@@ -103,7 +103,7 @@ public class BOJ2146 {
 			int y = buildablePos.get(i)[1];
 			buildBridge(x, y, map, visit);
 		}
-		System.out.println(buildablePos.size());
+		
 		System.out.println(minDistance);
 		
 	}

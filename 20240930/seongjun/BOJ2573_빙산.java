@@ -1,7 +1,9 @@
+package algorithm;
+
 import java.util.*;
 import java.io.*;
 
-public class Main {
+public class BOJ2573 {
 	
 	static int[] dx = {0, 0, -1, 1};
 	static int[] dy = {-1, 1, 0, 0};

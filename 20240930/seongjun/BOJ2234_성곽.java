@@ -1,7 +1,9 @@
+package algorithm;
+
 import java.util.*;
 import java.io.*;
 
-public class Main {
+public class BOJ2234 {
 	
 	static int N, M;
 	static int mark = 1;
