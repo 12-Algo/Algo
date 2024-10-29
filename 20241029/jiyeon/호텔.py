@@ -1,31 +1,16 @@
+import math
 import sys
 input = sys.stdin.readline
 
-def move(start, end):
-    if(start == end):
-        return 1
-    elif(start == 0):
-        return 2
-    elif(abs(end-start)%2 == 0):
-        return 4
-    else:
-        return 3
+c, n = map(int, input().split())
+promotionInfo = [list(map(int, input().split())) for _ in range(n)]
 
-arr = list(map(int, input().split()))
-dp = [[[-1]*5 for _ in range(5)] for _ in range(100000)]
+dp = [sys.maxsize for _ in range(c+100)] #idx명의 고객을 확보하는데 사용되는 최소 비용
+dp[0] = 0
 
-def solution(n, l, r):
-    dp[n][l][r] = min(solution(n+1, ))
+for cost, people in promotionInfo:
+    for i in range(people, c+100):
+        dp[i] = min(dp[i], dp[i-people]+cost)
 
-
-
-
-
-
-
-
-
-dp[n][l][r]?
-왼쪽발은 l 오른쪽발은 r, 몇번째 발판을 밟아야 하는가 n
-
+print(min(dp[c:]))
 
